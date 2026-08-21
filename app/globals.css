@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --color-marrks-charcoal: #1f1f1f;
+  --color-marrks-surface: #ffffff;
+  --color-marrks-warm: #f7f6f2;
+  --color-marrks-gold: #f4b400;
+  --color-marrks-gold-dark: #c98e00;
+  --color-marrks-slate: #334155;
+  --color-marrks-coral: #ff5c63;
+}
+
+:root {
+  --background: #f7f6f2;
+  --foreground: #1f1f1f;
+  --muted: #667085;
+  --surface: #ffffff;
+  --surface-soft: #efeee9;
+  --border: #e5e2da;
+  --gold: #f4b400;
+  --gold-dark: #c98e00;
+  --slate: #334155;
+  --logo-coral: #ff5c63;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--foreground);
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+.section {
+  padding: 96px 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  header nav {
+    display: none !important;
+  }
+
+  header .container > a:last-child {
+    display: none;
+  }
+
+  .container > div[style*="grid-template-columns: 1.02fr .98fr"],
+  .container > div[style*="grid-template-columns: 1.05fr .95fr"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .container > div[style*="repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  footer .container > div {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .container > div[style*="repeat(2, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .container > div[style*="repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  footer .container > div {
+    grid-template-columns: 1fr !important;
+  }
+}
