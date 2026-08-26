@@ -1,0 +1,5 @@
+import Link from "next/link";
+
+export default function ShowroomPage() {
+  return <div className="inner-page"><div className="page-container"><div className="showroom-page-hero"><div><span className="eyebrow">THE SHOWROOM</span><h1>See it.<br /><em>Compare it.</em><br />Reserve it.</h1><p>Bring your project to life with materials you can see and compare in person.</p><Link href="/products" className="button button-primary">Browse materials</Link></div><div className="showroom-large-image" /></div><div className="visit-grid"><div><span className="eyebrow">WHAT TO EXPECT</span><h2>A calmer way to choose.</h2></div><div className="visit-points"><p><strong>01 — Compare finishes</strong> See textures, colours and surfaces before making the decision.</p><p><strong>02 — Discuss your project</strong> Talk through options with the showroom team.</p><p><strong>03 — Reserve and collect</strong> Bring your reservation ID, complete payment in person and collect your products.</p></div></div></div></div>;
+}
